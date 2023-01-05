@@ -19,10 +19,10 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/players', [PlayersController::class, 'index']);
-Route::get('/player', [PlayersController::class, 'form,']);
-Route::post('/player', [PlayersController::class, 'store']);
+Route::get('/players', [PlayersController::class, 'index'])->name('players');
+Route::get('/player', [PlayersController::class, 'form'])->name('player');
+Route::post('/player', [PlayersController::class, 'store'])->name('storePlayer');
 
 Route::get('/tournaments', [TournamentsController::class, 'index']);
-Route::get('/tournament', [TournamentsController::class, 'form,']);
+Route::get('/tournament', [TournamentsController::class, 'form']);
 Route::post('/tournament', [TournamentsController::class, 'store']);

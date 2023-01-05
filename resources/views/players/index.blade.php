@@ -6,10 +6,15 @@
         </div>
         <div class="col-sm-6">
             <div>
-                <button class="btn btn-success" onclick="window.location.href=``">
+                <button class="btn btn-success" onclick="window.location.href=`/player/`">
                     Add</button>
             </div><br>
         </div>
+        @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{Session::get('success')}}
+        </div>
+        @endif
     </div>
 </div>
 
