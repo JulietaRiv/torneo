@@ -43,7 +43,13 @@ class PlayersController extends Controller
 				'streng'          => $request->streng ?? 0,
 				'reaction_time'   => $request->reaction_time ?? 0,
 			]);
-			return redirect()->route('players')->with('success, player was stored successfully');
+			return redirect()->route('players')->with('success, Player was stored successfully');
 		}
+	}
+
+	public function destroy(Player $player)
+	{
+		$player->delete();
+		return redirect()->route('players')->with('success', 'Player deleted successfully');
 	}
 }

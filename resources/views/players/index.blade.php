@@ -33,6 +33,7 @@
                 <th style="border: 1px solid;">Velocity</th>
                 <th style="border: 1px solid;">Streng</th>
                 <th style="border: 1px solid;">Reaction Time</th>
+                <th>Delete</th>
             </tr>
         </thead>
         @foreach($players as $player)
@@ -46,6 +47,8 @@
                 <td style="border: 1px solid;">{{$player->velocity}}</td>
                 <td style="border: 1px solid;">{{$player->streng}}</td>
                 <td style="border: 1px solid;">{{$player->reaction_time}}</td>
+                <td style="border: 1px solid;"> <button class="btn btn-success" onclick="window.location.href=`/deletePlayer/`. $player->id">
+                        Delete</button></td>
             </tr>
         </tbody>
         @endforeach
