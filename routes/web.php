@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/players', [PlayersController::class, 'index'])->name('players');
-Route::get('/player/{id}', [PlayersController::class, 'form'])->name('player');
-Route::post('/player', [PlayersController::class, 'store'])->name('storePlayer');
+Route::get('/player', [PlayersController::class, 'form'])->name('player');
+Route::post('/storePlayer', [PlayersController::class, 'store'])->name('storePlayer');
 Route::delete('/deletePlayer/{id}', [PlayersController::class, 'destroy'])->name('deletePlayer');
 
 Route::get('/tournaments', [TournamentsController::class, 'index']);
