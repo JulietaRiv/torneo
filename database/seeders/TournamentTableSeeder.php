@@ -21,7 +21,7 @@ class TournamentTableSeeder extends Seeder
 		$tournament1->createFixture();
 
 		$tournament2 = Tournament::create(['id'  => 2,	'sex' => 'm']);
-		$males = Player::where('sex', 'male')->limit(16)->get();
+		$males = Player::where('sex', 'male')->limit(8)->get();
 		$tournament2->players()->attach($males);
 		$tournament2->createFixture();
 	}

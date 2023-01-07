@@ -50,4 +50,21 @@ class Tournament extends Model
 			$this->createFixture($gameIds, $round + 1);
 		}
 	}
+
+	public function playTournament()
+	{
+		$rounds = sqrt(count($this->players));
+		for ($x = 1; $x <= round($rounds); $x++) {
+			$games = Game::where('tournament_id', $this->id)->where('round', $x)->get();
+			foreach ($games as $g => $game) {
+				$winner = $game->playGame();
+				if ($x == round($rounds) && $g == (count($games) - 1)) {
+					$this->update([
+						'winner_player_id' => $winner->id,
+					]);
+					return $winner;
+				}
+			}
+		}
+	}
 }
