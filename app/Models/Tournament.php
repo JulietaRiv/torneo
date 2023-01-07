@@ -32,7 +32,11 @@ class Tournament extends Model
 		$gamesPerRound = count($ids) / 2;
 		$data = [];
 		for ($x = 1; $x <= $gamesPerRound; $x++) {
-			$selected = array_rand($ids, 2);
+			if (1 == $round) {
+				$selected = array_rand($ids, 2);
+			} else {
+				$selected = [$ids[0], $ids[1]];
+			}
 			$id1 = $ids[$selected[0]];
 			$id2 = $ids[$selected[1]];
 			unset($ids[$selected[0]]);

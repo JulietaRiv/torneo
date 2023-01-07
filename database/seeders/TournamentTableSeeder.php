@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Player;
 use App\Models\Tournament;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class TournamentTableSeeder extends Seeder
 {
@@ -15,6 +16,9 @@ class TournamentTableSeeder extends Seeder
 	 */
 	public function run()
 	{
+		Schema::disableForeignKeyConstraints();
+		Tournament::truncate();
+
 		$tournament1 = Tournament::create(['id'  => 1,	'sex' => 'f']);
 		$females = Player::where('sex', 'female')->limit(8)->get();
 		$tournament1->players()->attach($females);
@@ -24,5 +28,6 @@ class TournamentTableSeeder extends Seeder
 		$males = Player::where('sex', 'male')->limit(8)->get();
 		$tournament2->players()->attach($males);
 		$tournament2->createFixture();
+		Schema::enableForeignKeyConstraints();
 	}
 }
