@@ -10,35 +10,32 @@ Also includes a main view where is displayed a select with each tournament creat
 These instructions will give you a copy of the project up and running on
 your local machine for development and testing purposes. 
 
-### Prerequisites
+Pre-requirements clipboard
+Is a must to install PHP, Laravel and Composer.
 
-Requirements for the software and other tools to build, test and push 
-- Laravel
-- Javascript
-- Jquery
-- Eloquent
-
-### Installing
-
-A step by step series of examples that tell you how to get a development
-environment running
-
--Clone the repository
--Create database
--Run migrations
--Run seeders
-
+Installation wrench y deployment package
+-Create local directory -Download the files or clone the repository -Create relational database Mysql -Configure .env file to connect to database -Run the next comman: php artisan key:generate for the .env file -And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment.
+Run migrations and seeders.
 Then you will have a basic dummie data to make the app work
 (Players, tournaments and their games)
 
+## Autor ✒️
 
-## Authors
+* **Julieta Riv** - https://github.com/JulietaRiv
 
-  - **Julieta Rivelli** - [JulietaRiv/torneo](https://github.com/JulietaRiv)
+## Versions 📌
+
+php 8.0.2
+composer 1.8.6
+laravel "^9.19"
+
+## Licencia 📄
+
+Under licencia GPL v3.
 
 
-## License
+## Gratitude 🎁
 
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details.
+* Specially thanks to Adrian Rivelli 🤓 my mentor https://github.com/arivelli.
+
+ 😊
