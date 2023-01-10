@@ -1,20 +1,22 @@
-# Project Title
+# Tenis Tournament
 
-One Paragraph of the project description
-
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+According to the challenge received, this project means to be a sample of determined capabilities developing with php language and Laravel framework.
+it consists in create the logic to create and play a tenis tournament, given a valid number of players with name and sex, and a set of attributes with random values (between 0 - 100), which determines the winner.
+It includes a players index view, with the list of players, a button to add new (with a very basic form) and a delete button foreach. 
+Also includes a main view where is displayed a select with each tournament created (2) to choose and a button to make them play. Under that, the number of tournament to be displayed and a graph representing every round with the initial players in round 1, and after make them play, all scores are completed, the winners highlighted and the next rounds fulfilled.
 
 ## Getting Started
 
 These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+your local machine for development and testing purposes. 
 
 ### Prerequisites
 
 Requirements for the software and other tools to build, test and push 
 - Laravel
+- Javascript
+- Jquery
+- Eloquent
 
 ### Installing
 
@@ -26,26 +28,13 @@ environment running
 -Run migrations
 -Run seeders
 
-
 Then you will have a basic dummie data to make the app work
 (Players, tournaments and their games)
-
-## Usage
-
--Aca explicar todo lo que incluye y como se usa
-
-## Built With
-
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
 
 
 ## Authors
 
-  - **Julieta Rivelli** - *Provided README Template* -
-    [JulietaRiv/torneo](https://github.com/JulietaRiv)
+  - **Julieta Rivelli** - [JulietaRiv/torneo](https://github.com/JulietaRiv)
 
 
 ## License
