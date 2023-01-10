@@ -11,6 +11,41 @@ The idea was to add also another button in the main view to manage tournaments (
 But considering the porpose of the project, and the lack of time, it might be accomplished in a next iteration. 
 
 
+## Pre requisites
+
+php<br>
+git<br>
+composer
+
+## How To Use
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/JulietaRiv/torneo
+
+# Go into the repository
+$ cd torneo
+
+# Copy .env.example file
+$ cp .env.example .env
+
+# Install Sail
+$ composer require laravel/sail --dev
+$ php artisan sail:install
+
+# Start the app
+$./vendor/bin/sail up
+
+# Create Database
+# Run migrations and seeders
+$ sail artisan migrate --seed
+```
+
+> **Note**
+> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+
+
 ## Getting Started 
 
 Is a must to install PHP, Laravel, Sail and Composer.<br>
@@ -27,10 +62,10 @@ Then you will have a basic dummie data to make the app work <br>
 
 ## Technical Notes
 
-I have created 3 models (Player, Tournament and Game) and their controllers, 
-4 migration files to create the database scheme
-2 seeder files with the use of a factory file and Faker class,
-a request file with a separated validation rules for players form,
+I have created 3 models (Player, Tournament and Game) and their controllers, <br> 
+4 migration files to create the database scheme<br>
+2 seeder files with the use of a factory file and Faker class,<br>
+a request file with a separated validation rules for players form,<br>
 3 blade templates views, the main tournament view, the players index view and the basic players form
 
 
