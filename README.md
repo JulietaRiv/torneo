@@ -115,13 +115,4 @@ composer 2.4.2
 laravel "^9.19"
 
 
-## Licencia 📄
-
-Under licencia GPL v3.
-
-
-## Gratitude 🎁
-
-* Specially thanks to Adrian Rivelli 🤓 my mentor https://github.com/arivelli.
-
  😊
