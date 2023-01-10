@@ -110,8 +110,8 @@ Apartado 4: Subir el o los servicios a aws/azure/etc utilizando docker o kuberne
 
 ## Versions 📌
 
-php 8.0.2
-composer 2.4.2
+php 8.0.2<br>
+composer 2.4.2<br>
 laravel "^9.19"
 
 
