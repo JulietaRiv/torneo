@@ -21,32 +21,29 @@ class Tournament extends Model
 	{
 		if (null == $round) {
 			$round = 1;
+			//get random players
 			$ids = $this->players()->get(['players.id'])->pluck('id')->toArray();
+			//set fields to store
 			$field1 = 'player_1_id';
 			$field2 = 'player_2_id';
 		} else {
 			$field1 = 'game_id_player_1';
 			$field2 = 'game_id_player_2';
 		}
-
+		//count needed games per rounds
 		$gamesPerRound = count($ids) / 2;
 		$data = [];
 		for ($x = 1; $x <= $gamesPerRound; $x++) {
-			if (1 == $round) {
-				$selected = array_rand($ids, 2);
-			} else {
-				$selected = [$ids[0], $ids[1]];
-			}
-			$id1 = $ids[$selected[0]];
-			$id2 = $ids[$selected[1]];
-			unset($ids[$selected[0]]);
-			unset($ids[$selected[1]]);
+			//choose the first 2 players/ games to create the next game
 			$data[] = [
 				'round'         => $round,
-				$field1         => $id1,
-				$field2         => $id2,
+				$field1         => $ids[0],
+				$field2         => $ids[1],
 				'tournament_id' => $this->id,
 			];
+			//reset the array with available players/ games
+			unset($ids[0], $ids[1]);
+			$ids = array_values($ids);
 		}
 		Game::insert($data);
 		if (count($data) > 1) {

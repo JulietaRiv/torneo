@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <div>
+        <div style="text-align:center;padding:15px;">
+            <h1> Tenis Tournament</h1>
+            <p>Select a tournament and make them play</p>
 
-    <div class="w3-container">
-        <h2> Tournament</h2>
-        <p>Select a tournament and make them play</p>
-
-        <form>
-            <select>
-                @foreach ($tournaments as $tournament)
-                <option>Tournament: {{$tournament->id}} (sex: {{$tournament->sex}})</option>
-                @endforeach
-            </select>
-        </form>
-
-        <div class="w3-card-4" style="width:50%;">
-            <header>
-                <h1>Tournament Name</h1>
-                <h5>Buttom to make them play</h5>
-            </header>
-
+            <form>
+                <select onchange="setTournament(this.value)">
+                    @foreach ($tournaments as $tournament)
+                    <option @if ($tournamentId==$tournament->id) selected @endif value={{$tournament->id}}>
+                        Tournament: {{$tournament->id}} (sex: {{$tournament->sex}})</option>
+                    @endforeach
+                </select>
+                <br>
+                <button type="button" onclick="location.href='/playTournament/{{$tournamentId}}'" class="btn btn-success">Make them play</button>
+            </form>
+        </div>
+        <div>
             <div>
                 <div class="header">
-                    <h1>FCS Tournament Bracket</h1>
+                    <h2 style="text-align:center;">Tournament N° {{$tournament->id}}</h2>
                 </div>
                 <div class="bracket-container">
                     @foreach($levels as $g => $level)
                     <div class="bracket-level">
                         @foreach ($level as $game)
-
+                        @php
+                        $winner1 = $winner2 = '';
+                        if(null != $game['score_player_1']){
+                        $winner1 = $game['score_player_1'] > $game['score_player_2']? 'winner': '';
+                        $winner2 = $game['score_player_2'] > $game['score_player_1']? 'winner': '';
+                        }
+                        @endphp
                         <div class="bracket-matchup">
-                            <div class="bracket-team winner">
-                                <div class="bracket-name">{{$game['player_1_id']}}</div>
-                                <div class="bracket-score"></div>
+                            <div class="bracket-team {{$winner1}}">
+                                <div class="bracket-name">Round: {{$game['round']}}</div>
+                                <div class="bracket-name">Player 1°: @isset($game['player_1_id']) {{$game->player1->name}} @endif</div>
+                                <div class="bracket-score">@isset($game['score_player_1']) {{$game->score_player_1}} @endif</div>
                             </div>
-                            <div class="bracket-team loser">
-                                <div class="bracket-name">{{$game['player_2_id']}}</div>
-                                <div class="bracket-score"></div>
+                            <div class="bracket-team {{$winner2}}">
+                                <div class="bracket-name">Round: {{$game['round']}}</div>
+                                <div class="bracket-name">Player 2°: @isset($game['player_2_id']) {{$game->player2->name}} @endif</div>
+                                <div class="bracket-score">@isset($game['score_player_2']) {{$game->score_player_2}} @endif</div>
                             </div>
                         </div>
-
                         @endforeach
                     </div>
                     @endforeach
@@ -51,15 +56,21 @@
 
 </body>
 </html>
+<script>
+    function setTournament(id) {
+        window.location.href = "/" + id;
+    }
 
+</script>
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
     @import url(https://fonts.googleapis.com/css?family=Dosis);
 
     html,
     body {
-        with: 100%;
+        width: 100%;
         height: 100%;
         margin: 0;
         background-color: #E8E8E8;
@@ -119,7 +130,7 @@
 
     .bracket-name {
         font-family: 'Open Sans', sans-serif;
-        width: 75%;
+        width: 80%;
         font-size: .75em;
         padding: .2em;
         line-height: 1.5em;

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TournamentsController::class, 'tournament']);
+Route::get('/{tournament?}', [TournamentsController::class, 'tournament']);
 
 Route::get('/players', [PlayersController::class, 'index'])->name('players');
 Route::get('/player', [PlayersController::class, 'form'])->name('player');
@@ -24,4 +24,5 @@ Route::delete('/deletePlayer/{id}', [PlayersController::class, 'destroy'])->name
 
 Route::get('/tournaments', [TournamentsController::class, 'index']);
 Route::post('/tournament', [TournamentsController::class, 'store']);
+Route::get('/playTournament/{tournament}', [TournamentsController::class, 'playTournament']);
 Route::delete('/deleteTournament/{id}', [PlayersController::class, 'destroy'])->name('deleteTournament');
