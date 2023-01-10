@@ -32,15 +32,19 @@ $ cd torneo
 # Copy .env.example file
 $ cp .env.example .env
 
-# Install dependencies
+# Install sail dependencies
 $ composer install
 
 # Start the app
 $./vendor/bin/sail up
 
-# Create Database
 # Run migrations and seeders
 $ sail artisan migrate --seed
+
+# Install dependencies of the container
+$ sail composer install
+
+# open browser http://localhost/tournament
 ```
 
 > **Note**
