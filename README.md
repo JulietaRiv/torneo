@@ -8,10 +8,10 @@ Also includes a main view where is displayed a select with each tournament creat
 
 ## Getting Started 
 
-Is a must to install PHP, Laravel and Composer.
--Create local directory 
--Download the files or clone the repository 
--Create relational database Mysql 
+Is a must to install PHP, Laravel and Composer.<br>
+-Create local directory <br>
+-Download the files or clone the repository <br>
+-Create relational database Mysql <br>
 -Configure .env file to connect to database 
 -And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment.
 -Run migrations and seeders.
