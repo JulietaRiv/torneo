@@ -12,11 +12,11 @@ Is a must to install PHP, Laravel and Composer.<br>
 -Create local directory <br>
 -Download the files or clone the repository <br>
 -Create relational database Mysql <br>
--Configure .env file to connect to database 
--And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment.
--Run migrations and seeders.
-Then you will have a basic dummie data to make the app work
-(Players, tournaments and their games)
+-Configure .env file to connect to database <br>
+-And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment. <br>
+-Run migrations and seeders. <br>
+Then you will have a basic dummie data to make the app work <br>
+(Players, tournaments and their games) <br>
 
 
 ## Challenge 
