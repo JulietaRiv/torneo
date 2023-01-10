@@ -15,9 +15,9 @@ But, as i mentioned due the porpose of this project, i rather to deliver this wa
 
 ## Pre requisites
 
-php (with all the required laravel modules)<br> 
+php<br> 
 git<br>
-composer
+composer (with all the dependencies)
 
 
 ## How To Use
@@ -32,9 +32,8 @@ $ cd torneo
 # Copy .env.example file
 $ cp .env.example .env
 
-# Install Sail
-$ composer require laravel/sail --dev
-$ php artisan sail:install
+# Install dependencies
+$ composer install
 
 # Start the app
 $./vendor/bin/sail up
@@ -46,7 +45,7 @@ $ sail artisan migrate --seed
 
 > **Note**
 > Then you will have a basic dummie data to make the app work <br>
-(Players, tournaments and their games) <br>
+(players, tournaments and their games) <br>
 
 
 ## Technical Notes
