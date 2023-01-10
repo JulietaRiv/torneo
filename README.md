@@ -15,7 +15,7 @@ But, as i mentioned due the porpose of this project, i rather to deliver this wa
 
 ## Pre requisites
 
-php<br>
+php (with all the required laravel modules)<br> 
 git<br>
 composer
 
