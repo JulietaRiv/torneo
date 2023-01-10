@@ -17,7 +17,7 @@ But, as i mentioned due the porpose of this project, i rather to deliver this wa
 
 php<br> 
 git<br>
-composer (with all the dependencies)
+composer (with all the Composer and Laravel dependencies)
 
 
 ## How To Use
