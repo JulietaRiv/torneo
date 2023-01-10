@@ -13,9 +13,11 @@
                         Tournament: {{$tournament->id}} (sex: {{$tournament->sex}})</option>
                     @endforeach
                 </select>
-                <br>
-                <button type="button" onclick="location.href='/playTournament/{{$tournamentId}}'" class="btn btn-success">Make them play</button>
+                <br><br>
+                <button type="button" onclick="location.href='/playTournament/{{$tournamentId}}'">Make them play</button>
             </form>
+        </div>
+        <div style="margin:45px;"><button type="button" onclick="location.href='/players'">Manage Players</button>
         </div>
         <div>
             <div>

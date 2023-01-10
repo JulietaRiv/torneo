@@ -36,9 +36,8 @@ class RouteServiceProvider extends ServiceProvider
 			Route::middleware('web')
 				->group(base_path('routes/web.php'));
 		});
-		parent::boot();
 
-		Route::model('Tournament', App\Models\Tournament::class);
+		parent::boot();
 	}
 
 	/**

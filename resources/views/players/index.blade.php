@@ -47,11 +47,14 @@
                 <td style="border: 1px solid;">{{$player->velocity}}</td>
                 <td style="border: 1px solid;">{{$player->streng}}</td>
                 <td style="border: 1px solid;">{{$player->reaction_time}}</td>
-                <td style="border: 1px solid;"> <button class="btn btn-danger" onclick="window.location.href=`{{ route('deletePlayer', $player->id) }}`">
-                        Delete</button></td>
+                <td style="border: 1px solid;">
+                    <button type="button" onclick="window.location.href=`{{ route('deletePlayer', $player->id) }}`">Delete</button>
+                </td>
             </tr>
         </tbody>
         @endforeach
     </table>
+    <br><br>
+    <button type="button" onclick="window.location.href=`{{ route('tournament') }}`">Back</button>
 </body>
 </html>

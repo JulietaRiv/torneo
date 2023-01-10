@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlayersRequest;
 use App\Models\Player;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class PlayersController extends Controller
 {
@@ -18,33 +17,18 @@ class PlayersController extends Controller
 		return view('players.form', ['player' => $player]);
 	}
 
-	public function store(Request $request)
+	public function store(PlayersRequest $request)
 	{
-		$validator = Validator::make($request->all(), [
-			'name'            => 'required',
-			'sex'             => 'required',
-			'ability'         => 'required|numeric|min:0|max:100',
-			'luck'            => 'required|numeric|min:0|max:100',
-			'velocity'        => 'sometimes|exclude_unless:sex,male|required|numeric|min:0|max:100',
-			'streng'          => 'sometimes|exclude_unless:sex,male|required|numeric|min:0|max:100',
-			'reaction_time'   => 'sometimes|exclude_unless:sex,female|required|numeric|min:0|max:100',
+		Player::create([
+			'name'            => $request->name,
+			'sex'             => $request->sex,
+			'ability'         => $request->ability,
+			'luck'            => $request->luck,
+			'velocity'        => $request->velocity ?? 0,
+			'streng'          => $request->streng ?? 0,
+			'reaction_time'   => $request->reaction_time ?? 0,
 		]);
-		if ($validator->fails()) {
-			return redirect()->back()
-				->withErrors($validator)
-				->withInput();
-		} else {
-			Player::create([
-				'name'            => $request->name,
-				'sex'             => $request->sex,
-				'ability'         => $request->ability,
-				'luck'            => $request->luck,
-				'velocity'        => $request->velocity ?? 0,
-				'streng'          => $request->streng ?? 0,
-				'reaction_time'   => $request->reaction_time ?? 0,
-			]);
-			return redirect()->route('players')->with('success, Player was stored successfully');
-		}
+		return redirect()->route('players')->with('success, Player was stored successfully');
 	}
 
 	public function destroy(Player $player)
