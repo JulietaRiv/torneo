@@ -8,15 +8,25 @@ Also includes a main view where is displayed a select with each tournament creat
 
 ## Getting Started 
 
-Is a must to install PHP, Laravel and Composer.<br>
+Is a must to install PHP, Laravel, Sail and Composer.<br>
 -Create local directory <br>
 -Download the files or clone the repository <br>
 -Create relational database Mysql <br>
--Configure .env file to connect to database <br>
+-Configure .env file to connect to database (DB_DATABASE=torneo, DB_USERNAME=sail, DB_PASSWORD=password)<br>
+-Run ./vendor/bin/sail up to start the app
 -And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment. <br>
 -Run migrations and seeders. <br>
 Then you will have a basic dummie data to make the app work <br>
 (Players, tournaments and their games) <br>
+
+
+## Technical Notes
+
+I have created 3 models (Player, Tournament and Game) and their controllers, 
+4 migration files to create the database scheme
+2 seeder files with the use of a factory file and Faker class,
+a request file with a separated validation rules for players form,
+3 blade templates views, the main tournament view, the players index view and the basic players form
 
 
 ## Challenge 
