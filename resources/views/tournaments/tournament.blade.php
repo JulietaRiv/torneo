@@ -5,10 +5,8 @@
         <div style="text-align:center;padding:15px;">
             <h1> Tenis Tournament</h1>
             <p>Select a tournament and make them play</p>
-
             <form>
-                <select onchange="console.log('/tournament/'+this.value)">
-                    {{--<select onchange="location.href='/tournament/'+this.value">--}}
+                <select onchange="location.href='/tournament/'+this.value">
                     @foreach ($tournaments as $tournament)
                     <option @if ($tournamentId==$tournament->id) selected @endif value={{$tournament->id}}>
                         Tournament: {{$tournament->id}} (sex: {{$tournament->sex}})</option>
