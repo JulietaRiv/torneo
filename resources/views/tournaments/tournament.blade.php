@@ -7,7 +7,8 @@
             <p>Select a tournament and make them play</p>
 
             <form>
-                <select onchange="setTournament(this.value)">
+                <select onchange="console.log('/tournament/'+this.value)">
+                    {{--<select onchange="location.href='/tournament/'+this.value">--}}
                     @foreach ($tournaments as $tournament)
                     <option @if ($tournamentId==$tournament->id) selected @endif value={{$tournament->id}}>
                         Tournament: {{$tournament->id}} (sex: {{$tournament->sex}})</option>
@@ -58,12 +59,6 @@
 
 </body>
 </html>
-<script>
-    function setTournament(id) {
-        window.location.href = "/" + id;
-    }
-
-</script>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <style>

@@ -34,6 +34,6 @@ class TournamentsController extends Controller
 	public function playTournament(Tournament $tournament)
 	{
 		$tournament->playTournament();
-		return redirect('/' . $tournament->id);
+		return redirect()->route('tournament', [$tournament->id]);
 	}
 }
