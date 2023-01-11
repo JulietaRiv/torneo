@@ -1,36 +1,63 @@
 # Tenis Tournament
 
 According to the challenge received, this project means to be a sample of determined capabilities developing with php language and Laravel framework.
+considering the porpose of the project, and the lack of time, there are things that might not be completed, nor attention was spent in aestethic manners, as well.
+
 It consists in create the logic to create and play a tenis tournament, given a valid number of players with name and sex, and a set of attributes with random values (between 0 - 100), which determines the winner.
 
 It includes a players index view, with the list of players, a button to add new (with a very basic form) and a delete button foreach. 
-Also includes a main view where is displayed a select with each tournament created (2) with 8 player each, to choose and a button to make them play. Under that, the number of the tournament to be displayed and a graph representing every round with the initial players in round 1, and after make them play, all scores are completed, the winners highlighted and the next rounds fulfilled. 
+Also includes a main view where is displayed a select with each tournament created (with 8 players each) to choose, and a button to make them play. Under that, the number of the tournament to be displayed and a graph representing every round with the initial players in round 1, and after make them play, all scores are completed, the winners highlighted and the next rounds fulfilled. 
+I added a button (manage Players) to redirect to players index view. And there, a back button for navegavility.
 
-I added a button (manage Players) to redirect to players index view. And thear a back button for navegavility.
-The idea was to add also another button in the main view to manage tournaments (create and delete) and give to both the edition functionallity. 
-But considering the porpose of the project, and the lack of time, it might be accomplished in a next iteration. 
+The idea was to add also another button in the main view to manage tournaments (create and delete) and give to both the edition functionallity. Also, to have a proper validation on tournament form to allow users to add exactly the proper amount of players, and all of them according to the tournament sex assigned.
+But, as i mentioned due the porpose of this project, i rather to deliver this way, assuming is understood.
 
 
-## Getting Started 
+## Pre requisites
 
-Is a must to install PHP, Laravel, Sail and Composer.<br>
--Create local directory <br>
--Download the files or clone the repository <br>
--Create relational database Mysql <br>
--Configure .env file to connect to database (DB_DATABASE=torneo, DB_USERNAME=sail, DB_PASSWORD=password)<br>
--Run ./vendor/bin/sail up to start the app
--And as any other Laravel app deploy according to this instructions -https://laravel.com/docs/7.x/deployment. <br>
--Run migrations and seeders. <br>
-Then you will have a basic dummie data to make the app work <br>
-(Players, tournaments and their games) <br>
+php<br> 
+git<br>
+composer (with all the Composer and Laravel dependencies)
+
+
+## How To Use
+
+```bash
+# Clone this repository
+$ git clone https://github.com/JulietaRiv/torneo
+
+# Go into the repository
+$ cd torneo
+
+# Copy .env.example file
+$ cp .env.example .env
+
+# Install sail dependencies
+$ composer install
+
+# Start the app
+$./vendor/bin/sail up
+
+# Run migrations and seeders
+$ sail artisan migrate --seed
+
+# Install dependencies of the container
+$ sail composer install
+
+# open browser http://localhost/tournament
+```
+
+> **Note**
+> Then you will have a basic dummie data to make the app work <br>
+(players, tournaments and their games) <br>
 
 
 ## Technical Notes
 
-I have created 3 models (Player, Tournament and Game) and their controllers, 
-4 migration files to create the database scheme
-2 seeder files with the use of a factory file and Faker class,
-a request file with a separated validation rules for players form,
+I have created 3 models (Player, Tournament and Game) and their controllers, <br> 
+4 migration files to create the database scheme<br>
+2 seeder files with the use of a factory file and Faker class,<br>
+a request file with a separated validation rules for players form,<br>
 3 blade templates views, the main tournament view, the players index view and the basic players form
 
 
@@ -86,18 +113,9 @@ Apartado 4: Subir el o los servicios a aws/azure/etc utilizando docker o kuberne
 
 ## Versions 📌
 
-php 8.0.2
-composer 2.4.2
+php 8.0.2<br>
+composer 2.4.2<br>
 laravel "^9.19"
 
-
-## Licencia 📄
-
-Under licencia GPL v3.
-
-
-## Gratitude 🎁
-
-* Specially thanks to Adrian Rivelli 🤓 my mentor https://github.com/arivelli.
 
  😊
